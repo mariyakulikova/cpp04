@@ -1,10 +1,10 @@
-NAME = claptrap
+NAME = animal
 CXX = clang++
 STD = -std=c++98
 CXXFLAGS = -Wextra -Wall -Werror $(STD)
 RM = rm -f
 
-SRCS =	main.cpp ClapTrap.cpp
+SRCS =	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
