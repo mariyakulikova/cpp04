@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 17:39:54 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/20 14:28:48 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/20 16:21:12 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,21 @@ void Character::equip(AMateria *m)
 	}
 	_inventory[_mCount] = m;
 	_mCount++;
+	std::cout<<"equip _mCount "<<_mCount<<std::endl;
 }
 
 void Character::unequip(int idx)
 {
 	if (idx < 0 || idx >= _mCount)
 	{
+		std::cout<<"unequip is doing nothing"<<std::endl;
+		return ;
+	}
+	if (idx == (_mCount - 1))
+	{
+		_inventory[idx] = 0;
+		_mCount--;
+		std::cout<<"unequip _mCount "<<_mCount<<std::endl;
 		return ;
 	}
 	for (int i = (idx + 1); i < _mCount; i++)
@@ -87,11 +96,17 @@ void Character::unequip(int idx)
 		_inventory[idx] = _inventory[i];
 		idx++;
 		_mCount--;
+		std::cout<<"unequip _mCount "<<_mCount<<std::endl;
 	}
 }
 
 void Character::use(int idx, ICharacter &target)
 {
+	if (_mCount == 0)
+	{
+		std::cout<<"use is doing nothing"<<std::endl;
+		return ;
+	}
 	if (idx >= 0 && idx < 4)
 	{
 		_inventory[idx]->use(target);
