@@ -1,4 +1,4 @@
-NAME = animal
+NAME = exe
 CXX = clang++
 STD = -std=c++98
 CXXFLAGS = -Wextra -Wall -Werror $(STD)
