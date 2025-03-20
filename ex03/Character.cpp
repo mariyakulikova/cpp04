@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 17:39:54 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/19 21:04:42 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/20 14:28:48 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,6 @@ Character &Character::operator=(const Character &other)
 Character::~Character()
 {
 	std::cout << "Character destructor called" << std::endl;
-	for (int i = 0; i < _mCount; i++)
-	{
-		delete _inventory[i];
-	}
 }
 
 std::string const &Character::getName() const
@@ -82,9 +78,16 @@ void Character::equip(AMateria *m)
 
 void Character::unequip(int idx)
 {
-	//TODO
-	(void)idx;
-	std::cout << "хз что с этим делать" << std::endl;
+	if (idx < 0 || idx >= _mCount)
+	{
+		return ;
+	}
+	for (int i = (idx + 1); i < _mCount; i++)
+	{
+		_inventory[idx] = _inventory[i];
+		idx++;
+		_mCount--;
+	}
 }
 
 void Character::use(int idx, ICharacter &target)
