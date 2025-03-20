@@ -17,21 +17,21 @@ Dog::Dog()
 	: Animal("Dog")
 	, brain(new Brain())
 {
-	std::cout << YELLOW << "Dog default constructor called" << std::endl;
+	std::cout << "Dog default constructor called" << std::endl;
 }
 
 Dog::Dog(const std::string &str)
 	: Animal(str)
 	, brain(new Brain())
 {
-	std::cout << YELLOW << "Dog parameterized constructor called" << std::endl;
+	std::cout << "Dog parameterized constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog& other)
 	: Animal(other)
 	, brain(new Brain(*other.brain))
 {
-	std::cout << YELLOW << "Dog copy constructor called" << std::endl;
+	std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& other)
@@ -40,19 +40,19 @@ Dog& Dog::operator=(const Dog& other)
 		Animal::operator=(other);
 		*brain = *other.brain;
 	}
-	std::cout << YELLOW << "Dog assignment constructor called" << std::endl;
+	std::cout << "Dog assignment constructor called" << std::endl;
 	return *this;
 }
 
 Dog::~Dog()
 {
-	std::cout << YELLOW << "Dog destructor called" << std::endl;
+	std::cout << "Dog destructor called" << std::endl;
 	delete brain;
 }
 
 void Dog::makeSound() const
 {
-	std::cout << YELLOW << "Dog says meow" << std::endl;
+	std::cout << "Dog says meow" << std::endl;
 }
 
 void Dog::setIdea(int idx, std::string idea)

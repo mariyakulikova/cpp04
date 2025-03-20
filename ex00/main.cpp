@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 10:06:54 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/18 11:08:19 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/20 16:28:17 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int main()
 	const Animal *dog = new Dog("Dog");
 	const Animal *cat = new Cat("Cat");
 
-	std::cout << GREEN << "Object's dog type is " << dog->getType() << std::endl;
-	std::cout << YELLOW << "Object's cat type is " << cat->getType() << std::endl;
+	std::cout << "Object's dog type is " << dog->getType() << std::endl;
+	std::cout << "Object's cat type is " << cat->getType() << std::endl;
 	dog->makeSound();
 	cat->makeSound();
 	meta->makeSound();
@@ -31,7 +31,7 @@ int main()
 	delete dog;
 	delete cat;
 
-	std::cout << RESET << "\nTesting WrongAnimal and WrongCat:\n";
+	std::cout << "\nTesting WrongAnimal and WrongCat:\n";
 	const WrongAnimal* wrongMeta = new WrongAnimal();
 	const WrongAnimal* wrongCat = new WrongCat("Wrong cat");
 

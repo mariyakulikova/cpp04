@@ -16,19 +16,19 @@
 Dog::Dog()
 	: Animal("Dog")
 {
-	std::cout << GREEN << "Dog default constructor called" << std::endl;
+	std::cout << "Dog default constructor called" << std::endl;
 }
 
 Dog::Dog(const std::string &str)
 	: Animal(str)
 {
-	std::cout << GREEN << "Dog parameterized constructor called" << std::endl;
+	std::cout << "Dog parameterized constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog& other)
 	: Animal(other)
 {
-	std::cout << GREEN << "Dog copy constructor called" << std::endl;
+	std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& other)
@@ -36,17 +36,17 @@ Dog& Dog::operator=(const Dog& other)
 	if (this != &other) {
 		Animal::operator=(other);
 	}
-	std::cout << GREEN << "Dog assignment constructor called" << std::endl;
+	std::cout << "Dog assignment constructor called" << std::endl;
 	return *this;
 }
 
 Dog::~Dog()
 {
-	std::cout << GREEN << "Dog destructor called" << std::endl;
+	std::cout << "Dog destructor called" << std::endl;
 }
 
 void Dog::makeSound() const
 {
-	std::cout << GREEN << "Dog says woof woof" << std::endl;
+	std::cout << "Dog says woof woof" << std::endl;
 }
 

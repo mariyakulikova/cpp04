@@ -6,7 +6,7 @@
 /*   By: mkulikov <mkulikov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 10:06:26 by mkulikov          #+#    #+#             */
-/*   Updated: 2025/03/18 13:27:33 by mkulikov         ###   ########.fr       */
+/*   Updated: 2025/03/20 16:29:17 by mkulikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,21 @@ Cat::Cat()
 	: Animal("Cat")
 	, brain(new Brain())
 {
-	std::cout << YELLOW << "Cat default constructor called" << std::endl;
+	std::cout << "Cat default constructor called" << std::endl;
 }
 
 Cat::Cat(const std::string &str)
 	: Animal(str)
 	, brain(new Brain())
 {
-	std::cout << YELLOW << "Cat parameterized constructor called" << std::endl;
+	std::cout << "Cat parameterized constructor called" << std::endl;
 }
 
 Cat::Cat(const Cat& other)
 	: Animal(other)
 	, brain(new Brain(*other.brain))
 {
-	std::cout << YELLOW << "Cat copy constructor called" << std::endl;
+	std::cout << "Cat copy constructor called" << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& other)
@@ -39,19 +39,19 @@ Cat& Cat::operator=(const Cat& other)
 		Animal::operator=(other);
 		*brain = *other.brain;
 	}
-	std::cout << YELLOW << "Cat assignment constructor called" << std::endl;
+	std::cout << "Cat assignment constructor called" << std::endl;
 	return *this;
 }
 
 Cat::~Cat()
 {
-	std::cout << YELLOW << "Cat destructor called" << std::endl;
+	std::cout << "Cat destructor called" << std::endl;
 	delete brain;
 }
 
 void Cat::makeSound() const
 {
-	std::cout << YELLOW << "Cat says meow" << std::endl;
+	std::cout << "Cat says meow" << std::endl;
 }
 
 void Cat::setIdea(int idx, std::string idea)

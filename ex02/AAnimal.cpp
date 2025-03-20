@@ -15,19 +15,19 @@
 AAnimal::AAnimal()
 	:_type("AAnimal")
 {
-	std::cout << BLUE << "AAnimal default constructor called" << std::endl;
+	std::cout << "AAnimal default constructor called" << std::endl;
 }
 
 AAnimal::AAnimal(const std::string &str)
 	: _type(str)
 {
-	std::cout << BLUE << "AAnimal parameterized constructor called" << std::endl;
+	std::cout << "AAnimal parameterized constructor called" << std::endl;
 }
 
 AAnimal::AAnimal(const AAnimal &other)
 	: _type(other._type)
 {
-	std::cout << BLUE << "AAnimal copy constructor called" << std::endl;
+	std::cout << "AAnimal copy constructor called" << std::endl;
 }
 
 AAnimal &AAnimal::operator=(const AAnimal &other)
@@ -36,13 +36,13 @@ AAnimal &AAnimal::operator=(const AAnimal &other)
 	{
 		_type = other._type;
 	}
-	std::cout << BLUE << "AAnimal assignment constructor called" << std::endl;
+	std::cout << "AAnimal assignment constructor called" << std::endl;
 	return *this;
 }
 
 AAnimal::~AAnimal()
 {
-	std::cout << BLUE << "AAnimal destructor called" << std::endl;
+	std::cout << "AAnimal destructor called" << std::endl;
 }
 
 std::string AAnimal::getType() const
